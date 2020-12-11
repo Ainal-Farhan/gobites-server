@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const db = require("./app/models/index.js");
+const db = require("./web-app/models/index.js");
 
 // // Drop existing table and re-sync database
 // db.sequelize.sync({ force: true }).then(() => {
@@ -29,24 +29,16 @@ app.get("/", (req, res) => {
   res.json({ message: "goBites application database" });
 });
 
-// require("./app/routes/user.routes")(app);
-// require("./app/routes/admin.routes")(app);
-// require("./app/routes/customer.routes")(app);
-// require("./app/routes/deliveryDriver.routes")(app);
-// require("./app/routes/restaurant.routes")(app);
-// require("./app/routes/people.routes")(app);
-// require("./app/routes/address.routes")(app);
-// require("./app/routes/contact.routes")(app);
-// require("./app/routes/menuItem.routes")(app);
-// require("./app/routes/menuList.routes")(app);
+// website api
+require("./web-app/routes/user.routes.js")(app);
+require("./web-app/routes/admin.routes.js")(app);
+require("./web-app/routes/restaurant.routes.js")(app);
+require("./web-app/routes/customer.routes.js")(app);
+require("./web-app/routes/menuItem.routes.js")(app);
+require("./web-app/routes/order.routes.js")(app);
 
-require("./app/routes/user.routes.js")(app);
-require("./app/routes/admin.routes.js")(app);
-require("./app/routes/restaurant.routes.js")(app);
-require("./app/routes/customer.routes.js")(app);
-require("./app/routes/menuItem.routes.js")(app);
-// require("./server/app/routes/menuList.routes.js")(app);
-require("./app/routes/order.routes.js")(app);
+// mobile app api
+app.use(require("./mobile-app/api.js"));
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
