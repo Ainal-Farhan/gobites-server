@@ -29,6 +29,8 @@ app.get("/", (req, res) => {
   res.json({ message: "goBites application database" });
 });
 
+app.use('/resources',express.static(__dirname + '/resources/images'));
+
 // website api
 require("./web-app/routes/user.routes.js")(app);
 require("./web-app/routes/admin.routes.js")(app);
