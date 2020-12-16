@@ -1,11 +1,11 @@
 module.exports = {
     HOST: "johnny.heliohost.org",
-    USER: "ainalfa_ainal2",
-    PASSWORD: "ainal2@123",
+    USER: "ainalfa_ainal3",
+    PASSWORD: "ainal3@123",
     DB: "ainalfa_go-bites-db",
     dialect: "mysql",
     pool: {
-        max: 20,
+        max: 9999,
         min: 0,
         acquire: 30000,
         idle: 10000

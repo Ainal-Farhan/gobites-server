@@ -3,7 +3,9 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
-// app.use('/resources',express.static(__dirname + '/resources/images'));
+
+// get resources
+app.use('/resources',express.static(__dirname + '/resources/images'));
 
 app.use(cors());
 
@@ -29,7 +31,7 @@ app.get("/", (req, res) => {
   res.json({ message: "goBites application database" });
 });
 
-// website api
+// website api route
 require("./web-app/routes/user.routes.js")(app);
 require("./web-app/routes/admin.routes.js")(app);
 require("./web-app/routes/restaurant.routes.js")(app);
@@ -39,7 +41,7 @@ require("./web-app/routes/order.routes.js")(app);
 
 app.use(express.json());
 
-// mobile app api
+// mobile app api route
 app.use(require("./mobile-app/api.js"));
 
 // set port, listen for requests
