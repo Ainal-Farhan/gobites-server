@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
-app.use('/resources',express.static(__dirname + '/resources/images'));
+// app.use('/resources',express.static(__dirname + '/resources/images'));
 
 app.use(cors());
 
