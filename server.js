@@ -38,7 +38,7 @@ require("./web-app/routes/restaurant.routes.js")(app);
 require("./web-app/routes/customer.routes.js")(app);
 require("./web-app/routes/menuItem.routes.js")(app);
 require("./web-app/routes/order.routes.js")(app);
-// require("./web-app/routes/orderItem.routes.js")(app);
+require("./web-app/routes/orderItem.routes.js")(app);
 
 app.use(express.json());
 
