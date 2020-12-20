@@ -6,12 +6,20 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            allowNull: false
+            allowNull: false,
         },
         totalPrice: {
             type: Sequelize.DECIMAL(5,2),
-            allowNull: false
+            allowNull: false,
         },
+        fk_oid: {
+            type: Sequelize.INTEGER,
+            allowNull: false,
+        },
+        fk_mid: {
+            type: Sequelize.INTEGER,
+            allowNull: false,
+        }
     }, {
         underscore: true,
         timestamps: false,
