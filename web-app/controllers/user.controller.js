@@ -31,7 +31,7 @@ exports.findAllSameType = (req, res) => {
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error retrieving user with id=" + id
+                message: "Error retrieving users with type = " + type
             });
         });
 };

@@ -12,27 +12,17 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.DOUBLE,
             allowNull: false
         },
-        fkOid: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-            field: 'fk_oid',
-        },
-        fkMid: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-            field: 'fk_mid',
-        }
+        // fkOid: {
+        //     type: Sequelize.INTEGER,
+        //     allowNull: false,
+        //     field: 'fk_oid',
+        // },
+        // fkMid: {
+        //     type: Sequelize.INTEGER,
+        //     allowNull: false,
+        //     field: 'fk_mid',
+        // }
     }, {
-        indexes: [
-            {
-              unique: false,
-              fields: ['fk_oid'],
-            },
-            {
-              unique: false,
-              fields: ['fk_mid'],
-            },
-        ],
         underscore: true,
         timestamps: false,
         charset: 'utf8mb4',

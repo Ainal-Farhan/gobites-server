@@ -4,7 +4,11 @@ const Op = db.Sequelize.Op;
 
 // Retrieve all customers information
 exports.findAll = (req, res) => {
-    Customer.findAll()
+    Customer.findAll({
+        order: [
+            ['custname', 'ASC']
+        ]
+    })
         .then(data => {
             res.send(data);
         })

@@ -5,5 +5,5 @@ module.exports = app => {
 
     router.get("/", orderItem.findAll);
 
-    app.use("/api/orderItem", router);
+    app.use("/api/orderItems", router);
 }

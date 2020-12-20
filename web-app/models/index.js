@@ -70,18 +70,18 @@ db.user.belongsTo(db.restaurant, {
   hooks: true,
 });
 
-// db.orderItem.belongsTo(db.menuItem, {
-//   foreignKey: 'fk_mid',
-//   onDelete: 'cascade', 
-//   onUpdate: 'cascade',
-//   hooks: true,
-// });
+db.orderItem.belongsTo(db.menuItem, {
+  foreignKey: 'fk_mid',
+  onDelete: 'cascade', 
+  onUpdate: 'cascade',
+  hooks: true,
+});
 
-// db.orderItem.belongsTo(db.orderItem, {
-//   foreignKey: 'fk_oid',
-//   onDelete: 'cascade', 
-//   onUpdate: 'cascade',
-//   hooks: true,
-// });
+db.orderItem.belongsTo(db.order, {
+  foreignKey: 'fk_oid',
+  onDelete: 'cascade', 
+  onUpdate: 'cascade',
+  hooks: true,
+});
 
 module.exports = db;

@@ -4,7 +4,11 @@ const Op = db.Sequelize.Op;
 
 // Retrieve all restaurants information
 exports.findAll = (req, res) => {
-    Restaurant.findAll()
+    Restaurant.findAll({
+        order: [
+            ['restaurantname', 'ASC']
+        ]
+    })
         .then(data => {
             res.send(data);
         })
