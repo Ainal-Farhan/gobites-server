@@ -24,7 +24,7 @@ db.customer = require("./customer.model.js")(sequelize, Sequelize);
 db.admin = require("./admin.model.js")(sequelize, Sequelize);
 db.user = require("./user.model.js")(sequelize, Sequelize);
 db.order = require("./order.model.js")(sequelize, Sequelize);
-db.orderItem = require("./orderitem.model.js")(sequelize, Sequelize);
+// db.orderItem = require("./orderitem.model.js")(sequelize, Sequelize);
 db.menuItem = require("./menuItem.model.js")(sequelize, Sequelize);
 
 db.order.belongsTo(db.customer, {
@@ -48,18 +48,18 @@ db.user.belongsTo(db.restaurant, {
   hooks: true,
 });
 
-db.orderItem.belongsTo(db.menuItem, {
-  foreignKey: 'fk_mid',
-  onDelete: 'cascade', 
-  onUpdate: 'cascade',
-  hooks: true,
-});
+// db.orderItem.belongsTo(db.menuItem, {
+//   foreignKey: 'fk_mid',
+//   onDelete: 'cascade', 
+//   onUpdate: 'cascade',
+//   hooks: true,
+// });
 
-db.orderItem.belongsTo(db.orderItem, {
-  foreignKey: 'fk_oid',
-  onDelete: 'cascade', 
-  onUpdate: 'cascade',
-  hooks: true,
-});
+// db.orderItem.belongsTo(db.orderItem, {
+//   foreignKey: 'fk_oid',
+//   onDelete: 'cascade', 
+//   onUpdate: 'cascade',
+//   hooks: true,
+// });
 
 module.exports = db;
