@@ -11,14 +11,6 @@ module.exports = (sequelize, Sequelize) => {
         totalPrice: {
             type: Sequelize.DECIMAL(5,2),
             allowNull: false,
-        },
-        fk_oid: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-        },
-        fk_mid: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
         }
     }, {
         underscore: true,
