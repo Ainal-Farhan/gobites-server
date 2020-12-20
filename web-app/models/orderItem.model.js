@@ -1,11 +1,15 @@
 const { sequelize, Sequelize } = require(".");
 
 module.exports = (sequelize, Sequelize) => {
-    const MenuList = sequelize.define("MenuList", {
-        MLID: {
+    const OrderItem = sequelize.define("orderitem", {
+        id: {
             type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true,
+            allowNull: false
+        },
+        quantity: {
+            type: Sequelize.DOUBLE,
             allowNull: false
         }
     }, {
@@ -16,5 +20,5 @@ module.exports = (sequelize, Sequelize) => {
         freezeTableName: true
     });
 
-    return MenuList;
+    return OrderItem;
 }
