@@ -14,7 +14,7 @@ exports.findAll = (req, res) => {
             },
             {
                 model: Order,
-                attributes: ['orderid', 'totalPrice'],
+                attributes: ['orderid', 'totalPrice', status],
                 include: [
                     {
                         model: Customer,

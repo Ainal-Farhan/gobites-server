@@ -37,7 +37,7 @@ exports.findOne = (req, res) => {
 };
 
 // Update a order information with an id
-exports.updateOne = (req, res) => {
+exports.updateStatus = (req, res) => {
     const id = req.body.orderid;
   
     Order.update(req.body, {
@@ -46,17 +46,17 @@ exports.updateOne = (req, res) => {
       .then(num => {
           if (num == 1) {
               res.send({
-                  message: "Order information was updated successfully."
+                  message: "Order status was updated successfully."
               });
           } else {
               res.send({
-                  message: `Fail to update information with id=${id}. Maybe order was not found or req.body is empty!`
+                  message: `Fail to update order status with id=${id}. Maybe order was not found or req.body is empty!`
               });
           }
       })
       .catch(err => {
           res.status(500).send({
-              message: "Error updating order with id=" + id
+              message: "Error updating order status with id=" + id
           });
       });
 };
