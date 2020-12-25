@@ -13,7 +13,7 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
         },
         addedDate: {
-            type: Sequelize.DATETIME,
+            type: Sequelize.DATE,
             allowNull: false,
             defaultValue: Sequelize.Now,
         },
