@@ -31,6 +31,10 @@ module.exports = (sequelize, Sequelize) => {
         telephoneNo: {
             type: Sequelize.STRING(15),
             allowNull: false
+        },
+        image: {
+            type: Sequelize.STRING(255),
+            allowNull: true
         }
     }, {
         underscore: true,

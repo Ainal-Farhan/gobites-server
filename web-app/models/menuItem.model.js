@@ -1,7 +1,7 @@
 const { sequelize, Sequelize } = require(".");
 
 module.exports = (sequelize, Sequelize) => {
-    const MenuItem = sequelize.define("MenuItem", {
+    const MenuItem = sequelize.define("menuitem", {
         MID: {
             type: Sequelize.INTEGER,
             primaryKey: true,

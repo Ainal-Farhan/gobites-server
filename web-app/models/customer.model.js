@@ -32,6 +32,10 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING(50),
             allowNull: false
         },
+        image: {
+            type: Sequelize.String(255),
+            allowNull: false
+        }
     }, {
         underscore: true,
         timestamps: false,

@@ -11,6 +11,21 @@ module.exports = (sequelize, Sequelize) => {
         totalPrice: {
             type: Sequelize.DECIMAL(5,2),
             allowNull: false,
+        },
+        addedDate: {
+            type: Sequelize.DATETIME,
+            allowNull: false,
+            defaultValue: Sequelize.Now,
+        },
+        status: {
+            type: Sequelize.STRING(255),
+            allowNull: false,
+            defaultValue: 'PREPARING',
+        },
+        address: {
+            type: Sequelize.STRING(255),
+            allowNull: true,
+            defaultValue: null,
         }
     }, {
         underscore: true,

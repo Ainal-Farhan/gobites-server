@@ -1,21 +1,17 @@
 const { sequelize, Sequelize } = require(".");
 
 module.exports = (sequelize, Sequelize) => {
-    const OrderItem = sequelize.define("orderitem", {
-        id: {
+    const Cart = sequelize.define("cart", {
+        KID: {
             type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
         quantity: {
-            type: Sequelize.DOUBLE,
+            type: Sequelize.INTEGER,
             allowNull: false
         },
-        status: {
-            type: Sequelize.STRING(255),
-            defaultValue: 'PREPARING',
-        }
     }, {
         underscore: true,
         timestamps: false,
@@ -24,5 +20,5 @@ module.exports = (sequelize, Sequelize) => {
         freezeTableName: true
     });
 
-    return OrderItem;
+    return Customer;
 }
