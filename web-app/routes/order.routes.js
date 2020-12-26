@@ -7,7 +7,7 @@ module.exports = app => {
 
     router.get("/order", order.findOne);
 
-    router.put("/", order.updateStatus);
+    router.put("/update", order.updateStatus);
 
     router.delete("/", order.deleteOne);
 

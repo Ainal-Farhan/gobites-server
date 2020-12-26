@@ -1,7 +1,7 @@
 const { sequelize, Sequelize } = require(".");
 
 module.exports = (sequelize, Sequelize) => {
-    const Admin = sequelize.define("Admin", {
+    const Admin = sequelize.define("admin", {
         id: {
             type: Sequelize.INTEGER,
             primaryKey: true,
