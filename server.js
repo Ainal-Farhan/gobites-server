@@ -43,7 +43,7 @@ require("./web-app/routes/orderItem.routes.js")(app);
 app.use(express.json());
 
 // mobile app api route
-app.use(require("./mobile-app/api.js"));
+//app.use(require("./mobile-app/api.js"));
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
