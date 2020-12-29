@@ -616,7 +616,7 @@ router.post(DOMAIN+"/restimage", async(req, res) => {
       fs.unlinkSync(filePath);
       }
     });
-  /*
+  
   fs.writeFile("images/" + CID + "_" + name, realFile, function (err) {
     if (err)
       console.log(err);
@@ -635,7 +635,7 @@ router.post(DOMAIN+"/restimage", async(req, res) => {
       }
     });
  });
-*/
+
 router.post(DOMAIN+'/orderitemstatus', async(req, res) => {
 	const ID = req.body.ID;
 	await db.query(`
