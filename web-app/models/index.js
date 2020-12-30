@@ -27,7 +27,7 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
 
   dialect: dbConfig.dialect,
   operatorsAliases: 0,
-
+  timezone: dbConfig.timezone,
   pool: {
     max: dbConfig.pool.max,
     min: dbConfig.pool.min,

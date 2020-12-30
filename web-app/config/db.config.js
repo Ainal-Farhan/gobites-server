@@ -4,6 +4,7 @@ module.exports = {
     PASSWORD: "ainal3@123",
     DB: "ainalfa_go-bites-db",
     dialect: "mysql",
+    timezone: "+8:00",
     pool: {
         max: 9999,
         min: 0,
@@ -19,6 +20,7 @@ module.exports = {
 //     PASSWORD: "@A1n4l990311",
 //     DB: "gobites",
 //     dialect: "mysql",
+//     timezone: "+8:00",
 //     pool: {
 //         max: 10,
 //         min: 0,
