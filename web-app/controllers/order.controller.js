@@ -1,6 +1,7 @@
 const db = require('../models');
 const Order = db.order;
 const Op = db.Sequelize.Op;
+const sequelize = db.sequelize;
 
 // Retrieve all orders information
 exports.findAll = (req, res) => {
@@ -84,4 +85,27 @@ exports.deleteOne = (req, res) => {
               message: "Could not delete Order with id=" + id
           });
       });
+};
+
+exports.findAllTotalPrice = (req, res) => {
+    const year = req.query.year;
+    const month = req.query.month;
+
+    Order.findAll({
+        attributes: ['totalPrice'],
+        where: {
+            [Op.and]: [
+                sequelize.where(sequelize.fn('year', sequelize.col('addedDate')), year),
+                sequelize.where(sequelize.fn('month', sequelize.col('addedDate')), month)
+            ]
+        }
+    })
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: "Error retrieving Order items information"
+            });
+        });
 };

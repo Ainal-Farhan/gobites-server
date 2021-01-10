@@ -5,6 +5,8 @@ module.exports = app => {
 
     router.get("/", order.findAll);
 
+    router.get("/totalPrice", order.findAllTotalPrice);
+
     router.get("/order", order.findOne);
 
     router.put("/update", order.updateStatus);
