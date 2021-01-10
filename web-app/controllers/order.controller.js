@@ -92,11 +92,12 @@ exports.findAllTotalPrice = (req, res) => {
     const month = req.query.month;
 
     Order.findAll({
-        attributes: ['totalPrice'],
+        attributes: ['totalPrice', 'addedDate'],
         where: {
             [Op.and]: [
                 sequelize.where(sequelize.fn('year', sequelize.col('addedDate')), year),
-                sequelize.where(sequelize.fn('month', sequelize.col('addedDate')), month)
+                sequelize.where(sequelize.fn('month', sequelize.col('addedDate')), month),
+                { status: "DONE" }
             ]
         }
     })
