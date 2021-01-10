@@ -90,6 +90,30 @@ exports.deleteOne = (req, res) => {
 exports.findAllTotalPrice = (req, res) => {
     const year = req.query.year;
     const month = req.query.month;
+    const day = req.query.day;
+
+    if(day > 0 && day <= 31) {
+        Order.findAll({
+            attributes: ['totalPrice', 'addedDate'],
+            where: {
+                [Op.and]: [
+                    sequelize.where(sequelize.fn('year', sequelize.col('addedDate')), year),
+                    sequelize.where(sequelize.fn('month', sequelize.col('addedDate')), month),
+                    sequelize.where(sequelize.fn('day', sequelize.col('addedDate')), day),
+                    { status: "DONE" }
+                ]
+            }
+        })
+            .then(data => {
+                res.send(data);
+            })
+            .catch(err => {
+                res.status(500).send({
+                    message: "Error retrieving Order items information"
+                });
+            });
+        return;
+    }
 
     Order.findAll({
         attributes: ['totalPrice', 'addedDate'],
