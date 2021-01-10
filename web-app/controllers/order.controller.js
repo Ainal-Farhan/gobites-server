@@ -102,7 +102,8 @@ exports.findAllTotalPrice = (req, res) => {
                     sequelize.where(sequelize.fn('day', sequelize.col('addedDate')), day),
                     { status: "DONE" }
                 ]
-            }
+            },
+            order: [['addedDate', 'ASC']]
         })
             .then(data => {
                 res.send(data);
@@ -123,7 +124,8 @@ exports.findAllTotalPrice = (req, res) => {
                 sequelize.where(sequelize.fn('month', sequelize.col('addedDate')), month),
                 { status: "DONE" }
             ]
-        }
+        },
+        order: [['addedDate', 'ASC']]
     })
         .then(data => {
             res.send(data);
