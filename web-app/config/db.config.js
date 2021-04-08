@@ -1,8 +1,8 @@
 module.exports = {
-    HOST: "johnny.heliohost.org",
-    USER: "ainalfa_ainal3",
-    PASSWORD: "ainal3@123",
-    DB: "ainalfa_go-bites-db",
+    HOST: "sql6.freemysqlhosting.net",
+    USER: "	sql6404258",
+    PASSWORD: "xQaqgIvTgn",
+    DB: "sql6404258",
     dialect: "mysql",
     timezone: "-08:00",
     pool: {
