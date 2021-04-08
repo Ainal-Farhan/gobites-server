@@ -893,10 +893,10 @@ router.post(DOMAIN+'/insertorderaddress', async(req, res) => {
 
 async function main(){
     db = await mysql.createConnection({
-      host:"johnny.heliohost.org",
-      user: "ainalfa_pharveish",
-      password: "pharveish@123",
-      database: "ainalfa_go-bites-db",
+      host:"sql6.freemysqlhosting.net",
+      user: "sql6404258",
+      password: "xQaqgIvTgn",
+      database: "sql6404258",
       timezone: "-08:00",
       charset: "utf8mb4_general_ci",
       multipleStatements: true
