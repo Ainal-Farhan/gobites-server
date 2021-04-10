@@ -17,14 +17,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const db = require("./web-app/models/index.js");
 
-// Drop existing table and re-sync database
-db.sequelize.sync({ force: true }).then(() => {
-        console.log("Drop and re-sync db.");
-    });
+// // Drop existing table and re-sync database
+// db.sequelize.sync({ force: true }).then(() => {
+//         console.log("Drop and re-sync db.");
+//    });
 
-// db.sequelize.sync().then(() => {
-//     console.log("sync db status: done");
-// });
+ db.sequelize.sync().then(() => {
+     console.log("sync db status: done");
+ });
 
 // simple route
 app.get("/", (req, res) => {
